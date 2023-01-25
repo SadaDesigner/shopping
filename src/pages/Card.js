@@ -1,19 +1,21 @@
-const Card = (product) => {
-   
+
+const Card = ({product}) => {
+   let {id, name, email, phone, address, website} = product;
     return <>
     <div className="card mb-3" style={{width:'100%'}}>
  
   <div className="card-body">
-    <h5 className="card-title">{product.name}</h5>
-    <p className="card-text">{product.email}</p>
+  <p className="card-text">{id}</p>
+    <p className="card-text">{email}</p>
+    <h5 className="card-text">{name}</h5>
   </div>
   <ul className="list-group list-group-flush">
-    <li className="list-group-item">{product.phone}</li>
-    <li className="list-group-item">{product.city}</li>
-    <li className="list-group-item">{product.zipcode}</li>
+    <li className="list-group-item">{phone}</li>
+    <li className="list-group-item">{address.city}</li>
+    <li className="list-group-item">{address.zipcode}</li>
   </ul>
   <div className="card-body">
-    <a  href={product.website} className="card-link">{product.website}</a>
+    <a  href={website} className="card-link">{website}</a>
    
   </div>
 </div>

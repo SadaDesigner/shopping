@@ -39,3 +39,34 @@
 .active a {
   color: white;
 }
+
+.img-news {
+    width: 100%;
+    height: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+    padding: 1px;
+}
+li {
+  list-style-type: none;
+  
+}
+
+.card {
+   /* max-height: 350px; */
+}
+.font-small {
+  font-size: 14px;
+}
+.card-body {
+  max-height: 160px;
+  overflow: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+}
+
+.card-body::-webkit-scrollbar {
+  display: none;
+ 
+}

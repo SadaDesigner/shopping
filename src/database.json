@@ -1,0 +1,9 @@
+{
+    "products": [
+      { "id": 1, "name": "one", "description": "this is project one", "image": "image1" },
+      { "id": 2, "name": "two", "description": "this is project two", "image": "image2" },
+      { "id": 3, "name": "three", "description": "this is project three", "image": "image3" },
+      { "id": 4, "name": "four", "description": "this is project four", "image": "image4" }
+    ]
+   
+  }
