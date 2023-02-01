@@ -24,7 +24,7 @@ function App() {
     productHandle(id);
   };
 
-  let isAdmin = false;
+  let isAdmin = true;
   return (
     <>
       {currentpid}
@@ -65,6 +65,7 @@ function App() {
                     <ProductDetail currentpid={currentpid}></ProductDetail>
                   }
                 ></Route>
+              
                 <Route path="*" element={<ErrorRoute></ErrorRoute>}></Route>
               </Routes>
 

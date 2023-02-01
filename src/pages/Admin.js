@@ -2,11 +2,13 @@ import React, { useState, useEffect, createRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import LoadingSpin from "./LoadingSpin";
+import CustomAlerts from "../utilities/CustomAlerts";
 const Admin = ({getproductid}) => {
   let [products, handleProducts] = useState([]);
   let [spinner, handleSpinner] = useState(true);
   let [sortType, handleSort] = useState("");
   let sortSelect = createRef();
+  let [alertObj, handleShowAlert] = useState({showAlert: false, alertMsg:'' }) 
   //let [getpid, sendpidHandle] = useState();
 
 
@@ -14,7 +16,13 @@ const Admin = ({getproductid}) => {
     axios.get("http://localhost:3005/products").then((response) => {
       handleSpinner(false);
       handleProducts(response.data);
-    });
+    })
+    .catch(error => {
+      handleSpinner(false);
+      handleShowAlert({showAlert: true, alertMsg: error.message})
+    
+    }) 
+    ;
   }, []);
 
 
@@ -79,7 +87,7 @@ const Admin = ({getproductid}) => {
           </select>
         </div>
       </div>
-
+   
       <table className="table table-bordered table-rounded">
         <thead>
           <tr>
@@ -92,6 +100,7 @@ const Admin = ({getproductid}) => {
         </thead>
         <tbody>{productsList}</tbody>
       </table>
+      {alertObj.showAlert ? <CustomAlerts alertType='alert-danger mt-3'  alertMsg={alertObj.alertMsg}></CustomAlerts> : null}
     </div>
   );
 };

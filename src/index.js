@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axios from 'axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+axios.defaults.baseURL = 'https://simplecrud-3a40d-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json';
 root.render(
   <React.StrictMode>
     <App />

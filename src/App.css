@@ -70,3 +70,10 @@ li {
   display: none;
  
 }
+pre {
+  white-space: break-spaces;
+}
+
+.list-group-item div {
+  flex: 1;
+}

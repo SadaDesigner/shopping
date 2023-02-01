@@ -24,20 +24,20 @@ const NavBar = () => {
 
       <ul className="list-group">
         <li aria-current="true">
-          <NavLink activeClassName="active" className="list-group-item" to='/'>Home</NavLink>
+          <NavLink activeclassname="active" className="list-group-item" to='/'>Home</NavLink>
         </li>
         <li>
-        <NavLink activeClassName="active" className="list-group-item"  to='/news'>News</NavLink>
+        <NavLink activeclassname="active" className="list-group-item"  to='/news'>News</NavLink>
         </li>
         <li>
-        <NavLink activeClassName="active" className="list-group-item" to='/settings'>Settings</NavLink>
+        <NavLink activeclassname="active" className="list-group-item" to='/settings'>Settings</NavLink>
         </li>
         <li>
-        <NavLink activeClassName="active" className="list-group-item"
+        <NavLink activeclassname="active" className="list-group-item"
          to={{pathname:'/Profile', search:'myname=sadashiv', hash:'#bachuwar', state: {id:1122}}}>profile</NavLink>
         </li>
         <li>
-        <NavLink activeClassName="active" className="list-group-item" to='/admin'>Admin</NavLink>
+        <NavLink activeclassname="active" className="list-group-item" to='/admin'>Admin</NavLink>
         </li>
       </ul>
     </div>
