@@ -58,7 +58,7 @@ const News = () => {
 
   let articlesList = newslist.map((article) => {
     return (
-      <div className="col-12 col-md-3">
+      <div className="col-12 col-md-3" key={article.title}>
         <Article
           name={article.title}
           description={article.description}

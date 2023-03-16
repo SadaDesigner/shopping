@@ -6,7 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-axios.defaults.baseURL = 'https://simplecrud-3a40d-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json';
+
+axios.defaults.baseURL = 'https://simplecrud-3a40d-default-rtdb.asia-southeast1.firebasedatabase.app/posts';
 root.render(
   <React.StrictMode>
     <App />

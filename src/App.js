@@ -13,6 +13,7 @@ import ProductDetail from "./pages/ProductDetail";
 import { useState } from "react";
 import ErrorRoute from "./pages/ErrorRoute";
 import Login from "./layout/Login";
+import AddAdmin from "./pages/AddAdmin";
 
 let myvalue = "value from app to badge";
 export const useIt = React.createContext(myvalue);
@@ -27,6 +28,7 @@ function App() {
   let isAdmin = true;
   return (
     <>
+  
       {currentpid}
       <Header />
       <div className="container-fluid">
@@ -66,6 +68,12 @@ function App() {
                   }
                 ></Route>
               
+              <Route
+                  path="/addadmin"
+                  element={
+                   <AddAdmin></AddAdmin>
+                  }
+                ></Route>
                 <Route path="*" element={<ErrorRoute></ErrorRoute>}></Route>
               </Routes>
 

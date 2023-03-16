@@ -3,11 +3,6 @@ import { useState } from "react";
 const Article = (article) => {
   
 
-
-    
-
- 
- 
   let truncatedes = article.description ? article.description.substring(0, 55) + '...' : '';
   let truncatetitle = article.name ? article.name.substring(0, 55) + '...' : '';
    

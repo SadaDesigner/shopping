@@ -1,8 +1,11 @@
 import React, { useState, useEffect, createRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import LoadingSpin from "./LoadingSpin";
 import CustomAlerts from "../utilities/CustomAlerts";
+
+
+
 const Admin = ({getproductid}) => {
   let [products, handleProducts] = useState([]);
   let [spinner, handleSpinner] = useState(true);
@@ -10,6 +13,13 @@ const Admin = ({getproductid}) => {
   let sortSelect = createRef();
   let [alertObj, handleShowAlert] = useState({showAlert: false, alertMsg:'' }) 
   //let [getpid, sendpidHandle] = useState();
+  let navigate = useNavigate();
+
+let gotoAdd = () => {
+  navigate('/addAdmin')
+
+}
+
 
 
   useEffect(() => {
@@ -24,6 +34,7 @@ const Admin = ({getproductid}) => {
     }) 
     ;
   }, []);
+
 
 
   let sorting = () => {
@@ -70,6 +81,7 @@ const Admin = ({getproductid}) => {
   return (
     <div>
       <h5>Admin</h5>
+      <button onClick={gotoAdd} className="btn btn-primary">add admin</button>
       <div className="row">
         <div className="col-12 d-flex justify-content-center">
           {spinner ? <LoadingSpin spintype="text-success"></LoadingSpin> : null}
