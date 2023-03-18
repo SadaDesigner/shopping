@@ -24,7 +24,7 @@ const NavBar = () => {
 
       <ul className="list-group">
         <li aria-current="true">
-          <NavLink activeclassname="active" className="list-group-item" to='/'>Home</NavLink>
+          <NavLink activeclassname="active" className="list-group-item" to='/'>Music</NavLink>
         </li>
         <li>
         <NavLink activeclassname="active" className="list-group-item"  to='/news'>News</NavLink>

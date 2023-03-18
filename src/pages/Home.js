@@ -1,59 +1,20 @@
-import axios from "axios";
- import { useEffect, useState } from "react";
- import Card from './Card';
+
+import videoslist from '../utilities/songs'
+
 
 const Home = () => {
 
-    let [products, productHandle] = useState([]);
-
- 
-
-     useEffect(()=> {
-        axios.get('https://jsonplaceholder.typicode.com/users').then(
-            (response) => {
-                 productHandle(response.data)
-                 //console.log(`axios example: ${JSON.stringify(response)}`)
-            }
-        )
-
-          
-           
-            // async function getnews() {
-            //     let newsurl = 'https://newsapi.org/v2/everything?q=tesla&from=2022-12-03&sortBy=publishedAt&apiKey=e4bfc07f153a448ca332b1f7f2403187';
-            //     let response =  await fetch(newsurl);
-            //       let myresponse = response.json();
-                
-            //       console.log(myresponse)
-            // }
-
-            // console.log('api')
-
-            // getnews()
-            
-
-
-
-    },[]);
-
-    let productlist = products.map(product =>  
-        <div className="col-3" key={product.id}>
-                    <Card product={product}
-                          />
-          </div>
-         )
-
+    window.localStorage.setItem('videolist', videoslist)
 
     return <div>
+      <div className="row">
+           
+                {videoslist.map((video) => {
+                    return <div className="col-4 mb-4"><iframe className="p5" width="100%" height="315" src={video.url} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                })}
 
-      
-       <h5>Welcome Products</h5>
-
-       <div className="row">
-       
-        {productlist}
-       
-       </div>
-       </div>
+            </div>
+      </div>
 }
 
 export default Home;
