@@ -87,7 +87,8 @@ function App() {
                         {isAdmin ? 
                           <Route
                           path="/admin"
-                          element={<Admin getproductid={getproductid}></Admin>}
+                          element={<Admin profileid={profile.id}></Admin>}
+                          // element={<Admin profileid={profile.id} getproductid={getproductid}></Admin>}
                         ></Route> : <Route
                         path="/admin"
                         element={<Login></Login>}
@@ -110,7 +111,7 @@ function App() {
                       <Route
                           path="/addadmin"
                           element={
-                            <AddAdmin></AddAdmin>
+                            <AddAdmin profileid={profile.id}></AddAdmin>
                           }
                         ></Route>
                         <Route path="*" element={<ErrorRoute></ErrorRoute>}></Route>

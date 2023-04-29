@@ -6,13 +6,13 @@ import CustomAlerts from "../utilities/CustomAlerts";
 
 
 
-const Admin = ({getproductid}) => {
+const Admin = ({profileid}) => {
   let [products, handleProducts] = useState([]);
   let [spinner, handleSpinner] = useState(true);
   let [sortType, handleSort] = useState("");
   let sortSelect = createRef();
   let [alertObj, handleShowAlert] = useState({showAlert: false, alertMsg:'' }) 
-  //let [getpid, sendpidHandle] = useState();
+  let [getpid, sendpidHandle] = useState();
   let navigate = useNavigate();
 
 let gotoAdd = () => {
@@ -23,7 +23,7 @@ let gotoAdd = () => {
 
 
   useEffect(() => {
-    axios.get("http://localhost:3005/products").then((response) => {
+    axios.get(`http://localhost:3005/users/?profileid=${profileid}`).then((response) => {
       handleSpinner(false);
       handleProducts(response.data);
     })
@@ -33,7 +33,18 @@ let gotoAdd = () => {
     
     }) 
     ;
-  }, []);
+  }
+
+  , [products]);
+
+  let deleteUser = (id)=>{
+    axios.delete(`http://localhost:3005/users/${id}`).then(
+      (response)=>{
+        handleShowAlert({showAlert: true, alertMsg: 'User Deteled Successfullly'})
+      }
+    )
+    
+  }
 
 
 
@@ -42,9 +53,9 @@ let gotoAdd = () => {
   };
 
   let productSelect = (pid) => {
-    //sendpidHandle(pid)
-     //alert(pid)
-     getproductid(pid)
+    sendpidHandle(pid)
+     alert(pid)
+    //getproductid(pid)
 
 
   }
@@ -68,19 +79,24 @@ let gotoAdd = () => {
       return (
         <tr key={product.id}>
           <td>{product.id}</td>
-          <td>{product.image}</td>
-          <td>{product.name}</td>
-          <td>{product.description}</td>
+          <td>{product.username}</td>
+          <td>{product.age}</td>
+      
+          <td>{product.hobby}</td>
           <td>
             <Link onClick={() => productSelect(product.id)} to={productpath}>admin</Link>
           </td>
+          <td>
+            <button onClick={()=>{}} className="btn btn-primary me-2">Edit</button>
+            <button onClick={()=>{deleteUser(product.id)}} className="btn btn-danger">Delete</button>
+            </td>
         </tr>
       );
     });
 
   return (
     <div>
-      <h5>Admin</h5>
+      <h5>Family Details</h5>
       <button onClick={gotoAdd} className="btn btn-primary">add admin</button>
       <div className="row">
         <div className="col-12 d-flex justify-content-center">
@@ -104,10 +120,11 @@ let gotoAdd = () => {
         <thead>
           <tr>
             <th>Id</th>
-            <th>Image</th>
             <th>name</th>
+            <th>age</th>
             <th>description</th>
             <th></th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>{productsList}</tbody>

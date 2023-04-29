@@ -13,7 +13,7 @@ let [alertObj, handleShowAlert] = useState({showAlert: false, alertMsg:'' }) ;
 
 useEffect(() => {
  
-    axios.get(`http://localhost:3005/products/${currentpid}`)  //${currentpid}
+    axios.get(`http://localhost:3005/users/${currentpid}`)  //${currentpid}
     .then(
         response => handleProducts(response.data)
     )
@@ -37,12 +37,13 @@ useEffect(() => {
     <h5>Product Detail {currentpid}</h5>
      {alertObj.showAlert ? <CustomAlerts alertType='alert-danger'  alertMsg={alertObj.alertMsg}></CustomAlerts> : null}
    <div className="card mb-3" style={{width:'100%'}}>
-        {product.image}
+
  
   <div className="card-body">
-  <p className="">{product.id}</p>
-    <h5 className="card-title">{product.name}</h5>
-    <p className="">{product.description}</p>
+  {product.id}
+  <p className="">  {product.username}</p>
+    <h5 className="card-title">{product.age}</h5>
+    <p className="">{product.hobby}</p>
   </div> </div>
   
 

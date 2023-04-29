@@ -30,15 +30,16 @@ const NavBar = () => {
         <NavLink activeclassname="active" className="list-group-item"  to='/news'>News</NavLink>
         </li>
         <li>
+        <NavLink activeclassname="active" className="list-group-item" to='/admin'>Family Details</NavLink>
+        </li>
+        <li>
         <NavLink activeclassname="active" className="list-group-item" to='/settings'>Settings</NavLink>
         </li>
         <li>
         <NavLink activeclassname="active" className="list-group-item"
          to={{pathname:'/Profile', search:'myname=sadashiv', hash:'#bachuwar', state: {id:1122}}}>profile</NavLink>
         </li>
-        <li>
-        <NavLink activeclassname="active" className="list-group-item" to='/admin'>Admin</NavLink>
-        </li>
+        
       </ul>
     </div>
 }

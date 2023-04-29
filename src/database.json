@@ -1,9 +1,67 @@
 {
-    "products": [
-      { "id": 1, "name": "one", "description": "this is project one", "image": "image1" },
-      { "id": 2, "name": "two", "description": "this is project two", "image": "image2" },
-      { "id": 3, "name": "three", "description": "this is project three", "image": "image3" },
-      { "id": 4, "name": "four", "description": "this is project four", "image": "image4" }
-    ]
-   
-  }
+  "products": [
+    {
+      "id": 1,
+      "name": "one",
+      "description": "this is project one",
+      "image": "image1"
+    },
+    {
+      "id": 2,
+      "name": "two",
+      "description": "this is project two",
+      "image": "image2"
+    },
+    {
+      "id": 3,
+      "name": "three",
+      "description": "this is project three",
+      "image": "image3"
+    },
+    {
+      "id": 4,
+      "name": "four",
+      "description": "this is project four",
+      "image": "image4"
+    }
+  ],
+  "users": [
+    {
+      "username": "Sarika",
+      "hobby": "singing songs",
+      "profileid": "118277573968856471510",
+      "id": 9
+    },
+    {
+      "username": "Shruthika",
+      "hobby": "playing games",
+      "profileid": "118277573968856471510",
+      "id": 11
+    },
+    {
+      "username": "Mahendar",
+      "age": "37",
+      "profileid": "112849137106298658543",
+      "id": 12
+    },
+    {
+      "username": "Jayasri",
+      "age": "32",
+      "hobby": "listening music",
+      "profileid": "112849137106298658543",
+      "id": 13
+    },
+    {
+      "username": "Shanvika",
+      "age": "4",
+      "profileid": "118277573968856471510",
+      "id": 14
+    },
+    {
+      "username": "Sadashiv",
+      "age": "34",
+      "profileid": "118277573968856471510",
+      "id": 15
+    }
+  ]
+}

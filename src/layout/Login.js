@@ -12,7 +12,7 @@ const Login = ({ getIsLogged }) => {
 
   const login = useGoogleLogin({
     onSuccess: (res) => {
-     // console.log(res)
+       console.log('user console' + JSON.stringify(res))
       setUser(res)
 
 
@@ -34,7 +34,7 @@ const Login = ({ getIsLogged }) => {
           })
           .then((res) => {
             setProfile(res.data);
-            console.log(res.data)
+            console.log('profile console' + JSON.stringify(res.data))
             getIsLogged(user, res.data)
 
 
